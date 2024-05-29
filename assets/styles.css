@@ -18,10 +18,9 @@ body {
 header {
     background-color: #1e1e1e;
     color: #e0e0e0;
-    padding: 1rem 0;
+    padding: 16px 0;
     top: 0;
     position: sticky;
-    z-index: 1000;
 }
 
 header .container {
@@ -72,7 +71,7 @@ nav ul li a {
     background-color: #1e1e1e;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
+    margin-top: -10px;
     margin-right: 20px;
     position: sticky;
     top: 80px;
@@ -128,15 +127,13 @@ a:hover {
 }
 
 /* Featured Content Styles */
-.featured-content,
-.games-list,
+.cards-content,
 .featured-videos .video {
     display: flex;
     gap: 20px;
 }
 
-.featured-content article,
-.games-list .game,
+.cards-content article,
 .featured-videos .video {
     background-color: #1e1e1e;
     padding: 20px;
@@ -147,28 +144,27 @@ a:hover {
     color: #e0e0e0;
 }
 
-.featured-content img,
-.games-list img {
+.cards-content img {
     width: 100%;
     height: 190px;
     object-fit: cover;
 }
 
 /* News and Releases Styles */
-.latest-news {
+.cards2 {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.latest-news img {
+.cards2 img {
     width: 30%;
     height: 190px;
     object-fit: cover;
 }
 
-.latest-news article,
-.upcoming-releases .release {
+.cards2 article,
+.cards3-content3 {
     background-color: #1e1e1e;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -177,38 +173,38 @@ a:hover {
     justify-content: space-between;
 }
 
-.news {
+.left {
     width: 550px;
 }
 
-.news h3,
-.release-news h3 {
+.left h4 {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.left h3,
+.left2 h3 {
     font-weight: 700;
     font-size: 25px;
     margin-top: 0;
     margin-bottom: 40px;
 }
 
-.news h4 {
-    font-weight: 500;
-    font-size: 20px;
-}
-
-.release-news {
+.left2 {
     width: 400px;
 }
 
-.release-news h4 {
+.left2 h4 {
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 5px;
 }
 
-.release-news p {
+.left2 p {
     margin: 30px 0;
 }
 
-.release img {
+.cards3-content3 img {
     width: 50%;
     height: 190px;
     object-fit: cover;
@@ -263,7 +259,7 @@ a:hover {
 footer {
     background-color: #1e1e1e;
     color: #e0e0e0;
-    padding: 1rem 0;
+    padding: 16px 0;
     text-align: center;
 }
 
@@ -277,9 +273,8 @@ footer .container {
     padding: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
-    margin-bottom: 40px;
     max-width: 800px;
-    margin: 40px auto;
+    margin: 82px auto;
 }
 
 .contact-section h2 {
@@ -362,22 +357,28 @@ footer .container {
 
 .subscription-form {
     background: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    max-width: 450px;
     width: 100%;
     text-align: center;
     position: relative;
+    font-family: 'Arial', sans-serif;
 }
 
 .subscription-form .close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 18px;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
     text-decoration: none;
     color: #e0e0e0;
+    transition: color 0.3s;
+}
+
+.subscription-form .close-btn:hover {
+    color: #ff6666;
 }
 
 .subscription-form .icon-container {
@@ -385,43 +386,112 @@ footer .container {
 }
 
 .subscription-form .icon-container img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #e0e0e0;
 }
 
 .subscription-form h2 {
     margin-top: 0;
     color: #e0e0e0;
+    font-size: 24px;
 }
 
 .subscription-form p {
     color: #e0e0e0;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .subscription-form input[type="email"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     border: 1px solid #333;
     border-radius: 5px;
-    background-color: #1e1e1e;
+    background-color: #2a2a2a;
     color: #e0e0e0;
+    font-size: 16px;
+}
+
+.subscription-form .subscription-options {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.subscription-form .checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #e0e0e0;
+    user-select: none;
+}
+
+.subscription-form .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.subscription-form .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.subscription-form .checkbox-container:hover input ~ .checkmark {
+    background-color: #b3b3b3;
+}
+
+.subscription-form .checkbox-container input:checked ~ .checkmark {
+    background-color: #0099ff;
+}
+
+.subscription-form .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.subscription-form .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.subscription-form .checkbox-container .checkmark:after {
+    left: 50%;
+    top: 50%;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .subscription-form button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     background: linear-gradient(135deg, #0099ff, #0056b3);
     color: #e0e0e0;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.3s;
 }
 
 .subscription-form button:hover {
     background: linear-gradient(135deg, #0056b3, #0099ff);
+    transform: scale(1.05);
 }
 
 .subscription-form .disclaimer {
@@ -430,14 +500,13 @@ footer .container {
     margin-top: 10px;
 }
 
+
+
 /* Card Hover Effect */
-.featured-content article:hover,
-.games-list .game:hover,
-.latest-news article:hover,
-.upcoming-releases .release:hover,
-.featured-videos .video:hover,
-.top-reviews .review:hover,
-.recent-blogs .blog:hover {
-    background-color: #2a2a2a; /* Change this to your desired hover color */
+.cards-content article:hover,
+.cards2 article:hover,
+.cards3-content3:hover,
+.featured-videos .video:hover {
+    background-color: #2a2a2a;
     transition: background-color 0.3s ease;
 }
