@@ -732,7 +732,7 @@ footer .container {
     }
 
     /* Featured content adjustments */
-    .cards-content article, .cards3-content3 {
+    .cards-content article, .cards3-content3, .cards2 article {
         padding: 10px;
     }
 
@@ -755,6 +755,10 @@ footer .container {
     }
 
     .video-details p {
+        display: none;
+    }
+
+    #upcoming-releases p {
         display: none;
     }
 
